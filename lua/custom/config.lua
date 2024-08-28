@@ -10,8 +10,8 @@ require('telescope').setup {
 vim.keymap.set('n', '<space>ff', ':Telescope file_browser<CR>')
 vim.keymap.set('n', '\\', ':Neotree toggle=true position=right<CR>')
 
-vim.keymap.set('n', '<space>p', '"*p', { desc = '[P]aste from system' })
 vim.keymap.set('v', '<leader>d', '"*d')
 vim.keymap.set('v', '<leader>y', '"*y')
+vim.keymap.set('n', '<space>p', '"*p', { desc = '[P]aste from system' })
 vim.keymap.set('n', '<leader>yy', '"*yy', { desc = '[Y]ank line' })
 vim.keymap.set('n', '<leader>dd', '"*dd', { desc = '[D]ank line' })
