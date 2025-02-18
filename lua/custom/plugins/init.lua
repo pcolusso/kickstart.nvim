@@ -2,7 +2,6 @@
 --  I promise not to create any merge conflicts in this directory :)
 --
 -- See the kickstart.nvim README for more information
-
 return {
   {
     'nvim-lualine/lualine.nvim',
@@ -97,5 +96,10 @@ return {
     'mrcjkb/rustaceanvim',
     version = '^5',
     lazy = false,
+  },
+  {
+    'Aasim-A/scrollEOF.nvim',
+    event = { 'CursorMoved', 'WinScrolled' },
+    opts = {},
   },
 }
