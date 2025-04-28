@@ -37,6 +37,7 @@ return {
   },
   {
     'https://gitlab.com/HiPhish/rainbow-delimiters.nvim',
+    submodules = false,
     event = 'VeryLazy',
   },
   {
