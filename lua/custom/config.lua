@@ -1,14 +1,5 @@
 vim.opt.exrc = true
 
-require('telescope').setup {
-  extensions = {
-    file_browser = {
-      -- disables netrw and use telescope-file-browser in its place
-      hijack_netrw = true,
-    },
-  },
-}
-
 vim.keymap.set('n', '<space>ff', ':Telescope file_browser<CR>')
 vim.keymap.set('n', '\\', ':Neotree toggle=true position=right<CR>')
 

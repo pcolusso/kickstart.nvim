@@ -5,7 +5,7 @@
 return {
   {
     'nvim-lualine/lualine.nvim',
-    requires = { 'nvim-tree/nvim-web-devicons', opt = true },
+    dependencies = { { 'nvim-tree/nvim-web-devicons', optional = true } },
     config = true,
     event = 'VeryLazy',
   },
@@ -31,9 +31,6 @@ return {
   {
     'nvim-telescope/telescope-file-browser.nvim',
     dependencies = { 'nvim-telescope/telescope.nvim', 'nvim-lua/plenary.nvim' },
-    'prichrd/netrw.nvim',
-    event = 'VeryLazy',
-    config = true,
   },
   {
     'https://gitlab.com/HiPhish/rainbow-delimiters.nvim',
@@ -102,5 +99,35 @@ return {
     'Aasim-A/scrollEOF.nvim',
     event = { 'CursorMoved', 'WinScrolled' },
     opts = {},
+  },
+  {
+    'ThePrimeagen/99',
+    config = function()
+      local _99 = require('99')
+
+      local cwd = vim.uv.cwd()
+      local basename = vim.fs.basename(cwd)
+      _99.setup({
+        model = 'openrouter/moonshotai/kimi-k2.5',
+        logger = {
+          level = _99.DEBUG,
+          path = '/tmp/' .. basename .. '.99.debug',
+          print_on_error = true,
+        },
+        completion = {
+          -- Add paths to folders containing <skill_name>/SKILL.md files here
+          custom_rules = {},
+          source = 'cmp',
+        },
+        -- Auto-include these markdown files from ancestor directories into context
+        md_files = {
+          'AGENT.md',
+        },
+      })
+
+      vim.keymap.set('n', '<leader>9f', _99.fill_in_function)
+      vim.keymap.set('v', '<leader>9v', _99.visual)
+      vim.keymap.set('v', '<leader>9s', _99.stop_all_requests)
+    end,
   },
 }
