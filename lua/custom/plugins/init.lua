@@ -84,9 +84,9 @@ return {
       '3rd/image.nvim', -- Optional image support in preview window: See `# Preview Mode` for more information
     },
     opts = {
-      close_if_last_window = false,
-      filesystem = {
-        hijack_netrw_behavior = 'open_current',
+      close_if_last_window = true,
+      window = {
+        position = 'right',
       },
     },
   },

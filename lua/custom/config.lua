@@ -1,6 +1,11 @@
 vim.opt.exrc = true
 
-vim.keymap.set('n', '<space>ff', ':Telescope file_browser<CR>')
+vim.keymap.set('n', '<leader>pv', function()
+  require('telescope').extensions.file_browser.file_browser()
+end, { desc = 'File browser' })
+vim.keymap.set('n', '<space>ff', function()
+  require('telescope').extensions.file_browser.file_browser()
+end, { desc = 'File browser' })
 vim.keymap.set('n', '\\', ':Neotree toggle=true position=right<CR>')
 
 -- Bindings for not having the clipboard sync

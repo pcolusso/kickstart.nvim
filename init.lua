@@ -404,7 +404,13 @@ require('lazy').setup({
             require('telescope.themes').get_dropdown(),
           },
           file_browser = {
-            hijack_netrw = true,
+            hijack_netrw = false,
+            grouped = true,
+            respect_gitignore = false
+            -- Sorting options:
+            -- grouped = true,  -- Group directories before files
+            -- sorting_strategy = "ascending",  -- or "descending"
+            -- respect_gitignore = false,  -- Show gitignored files
           },
         },
       }
